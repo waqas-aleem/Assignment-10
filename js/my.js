@@ -487,4 +487,23 @@ function example20 ()
    }
 
   //21. Write a js program to remove first occurrence of a character from string.
+
+   function example21 () 
+  {
+    var newArray = [];
+    var newString = document.getElementById("text21").value;
+    newString = newString.split('');
+    
+    
+         
+
+    console.log("After Removal :",newArray.toString().replace(/,/g,'') );       
+          
+        
+    }
+    
+     
+    
    
+
+  
