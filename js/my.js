@@ -591,9 +591,11 @@ function example24()
 
 function replace_first_occuerence(str,searchstr, toReplace )       
 {
-            str = str.replace(searchstr,toReplace);
-
-            return str;
+    str = str.split('');  
+    
+    str.splice(str.indexOf(searchstr),1,toReplace);  
+    str = str.join('');  
+    return str;
 }
 function example25()
 {
