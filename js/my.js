@@ -488,22 +488,146 @@ function example20 ()
 
   //21. Write a js program to remove first occurrence of a character from string.
 
-   function example21 () 
-  {
-    var newArray = [];
-    var newString = document.getElementById("text21").value;
-    newString = newString.split('');
-    
-    
-         
+  function remove_first_occurrence(str, searchstr)       {
+	var index = str.indexOf(searchstr);
+	if (index === -1) 
+    {
+		return str;
+	}
+	
+    return str.slice(0, index) + str.slice(index + searchstr.length);
+}
+function example21()
+{
+        str = document.getElementById("text21").value;
+        searchstr = document.getElementById("text21a").value;
 
-    console.log("After Removal :",newArray.toString().replace(/,/g,'') );       
-          
+        document.getElementById("resulthead21").innerHTML =`Remove First Occurence of "${searchstr}"  from :"${str}" `;    
+        document.getElementById("result21").innerHTML =`${remove_first_occurrence(str, searchstr)}`;    
         
-    }
-    
-     
-    
-   
 
-  
+
+}
+//22. Write a js program to remove last occurrence of a character from string.
+
+function remove_last_occurrence(str, searchstr)       {
+	var index = str.lastIndexOf(searchstr);
+	if (index === -1) 
+    {
+		return str;
+	}
+	
+    return str.slice(0, index) + str.slice(index + searchstr.length);
+}
+function example22()
+{
+        str = document.getElementById("text22").value;
+        searchstr = document.getElementById("text22a").value;
+
+        document.getElementById("resulthead22").innerHTML =`Remove Last Occurence of "${searchstr}"  from :"${str}" `;    
+        document.getElementById("result22").innerHTML =`${remove_last_occurrence(str, searchstr)}`;    
+        
+
+
+}
+
+//23. Write a js program to remove all occurrences of a character from string.
+
+
+function remove_all_occurrence(str, searchstr)       {
+	var newString='';
+    for (let i = 0; i < str.length; i++) 
+    
+
+    {
+       if (str.charAt(i)!==searchstr) 
+       {  
+            newString = newString+str.charAt(i)
+       }    
+        
+    }	
+   return newString;
+}
+function example23()
+{
+        str = document.getElementById("text23").value;
+        searchstr = document.getElementById("text23a").value;
+
+        document.getElementById("resulthead23").innerHTML =`Remove All Occurence of "${searchstr}"  from :"${str}" `;    
+        document.getElementById("result23").innerHTML =`${remove_all_occurrence(str, searchstr)}`;    
+        
+
+
+}
+//24. Write a js program to remove all repeated characters from a given string.
+function remove_all_repeat(str, searchstr)       {
+    var newString='';
+    for (let i = 0; i < str.length; i++) 
+    
+
+    {
+       if (str.charAt(i)!==searchstr) 
+       {  
+            newString = newString+str.charAt(i)
+       }    
+        
+    }	
+   return newString;
+}
+    
+function example24()
+{
+        str = document.getElementById("text24").value;
+        searchstr = document.getElementById("text24a").value;
+
+        document.getElementById("resulthead24").innerHTML =`Remove All Repeated of "${searchstr}"  from :"${str}" `;    
+        document.getElementById("result24").innerHTML =`${remove_all_repeat(str, searchstr)}`;    
+        
+
+
+}
+
+//25. Write a js program to replace first occurrence of a character with another in a string.
+
+function replace_first_occuerence(str,searchstr, toReplace )       
+{
+            str = str.replace(searchstr,toReplace);
+
+            return str;
+}
+function example25()
+{
+        str = document.getElementById("text25").value;
+        searchstr = document.getElementById("text25a").value;
+        toReplace = document.getElementById("text25b").value;
+
+        document.getElementById("resulthead25").innerHTML =`Replace First Occurence of "${searchstr}"  from :"${str}" `;    
+        document.getElementById("result25").innerHTML =`${replace_first_occuerence(str,searchstr, toReplace)}`;    
+        
+
+
+}
+//26. Write a js program to replace last occurrence of a character with another in a string.
+function replace_Last_occuerence(str,searchstr, toReplace )       
+{
+    
+
+    str = str.split('');  
+    
+    str.splice(str.lastIndexOf(searchstr),1,toReplace);  
+    str = str.join('');  
+    return str;
+}
+function example26()
+{
+        str = document.getElementById("text26").value;
+        searchstr = document.getElementById("text26a").value;
+        toReplace = document.getElementById("text26b").value;
+
+        document.getElementById("resulthead26").innerHTML =`Replace First Occurence of "${searchstr}"  from :"${str}" `;    
+        document.getElementById("result26").innerHTML =`${replace_Last_occuerence(str,searchstr, toReplace)}`;    
+        
+
+
+}
+
