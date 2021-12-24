@@ -592,10 +592,15 @@ function example24()
 function replace_first_occuerence(str,searchstr, toReplace )       
 {
     str = str.split('');  
-    
+    if (str.indexOf(searchstr)>-1)
+    {
     str.splice(str.indexOf(searchstr),1,toReplace);  
     str = str.join('');  
     return str;
+    }
+    else {
+        return  `Not Found!`
+    }
 }
 function example25()
 {
@@ -615,10 +620,16 @@ function replace_Last_occuerence(str,searchstr, toReplace )
     
 
     str = str.split('');  
-    
+    if (str.lastIndexOf(searchstr)>-1)
+    {
     str.splice(str.lastIndexOf(searchstr),1,toReplace);  
     str = str.join('');  
     return str;
+    }
+ 
+else {
+    return  `Not Found!`
+}
 }
 function example26()
 {
@@ -632,7 +643,35 @@ function example26()
 
 
 }
-// 
-// 
-// 
-// 
+//27. Write a js program to replace all occurrences of a character with another in a string.
+
+function replace_all_repeat(str, searchstr,toReplace)       
+{
+              str = str.split('');
+
+              for (let i = 0; i < str.length; i++) {
+                  
+                   if (str[i]===searchstr) 
+                   {
+                         str[i] = toReplace;
+                   }
+                  
+              }
+
+              return str.join('');
+
+  
+}
+    
+function example27()
+{
+        str = document.getElementById("text27").value;
+        searchstr = document.getElementById("text27a").value;
+        toReplace = document.getElementById("text27b").value;
+
+        document.getElementById("resulthead27").innerHTML =`Replace First Occurence of "${searchstr}"  from :"${str}" `;    
+        document.getElementById("result27").innerHTML =`${replace_all_repeat(str,searchstr, toReplace)}`;    
+        
+
+
+}
