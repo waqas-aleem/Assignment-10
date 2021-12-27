@@ -669,9 +669,164 @@ function example27()
         searchstr = document.getElementById("text27a").value;
         toReplace = document.getElementById("text27b").value;
 
-        document.getElementById("resulthead27").innerHTML =`Replace First Occurence of "${searchstr}"  from :"${str}" `;    
+        document.getElementById("resulthead27").innerHTML =`Replace All Occurence of "${searchstr}"  from :"${str}" `;    
         document.getElementById("result27").innerHTML =`${replace_all_repeat(str,searchstr, toReplace)}`;    
         
 
 
 }
+
+
+//objects
+// 1. Write a JavaScript program to list the properties of a JavaScript object
+// var student = {
+// name : "David Rayy",
+// sclass : "VI",
+// rollno : 12 };
+// Sample Output: name,sclass,rollno
+var student = 
+{
+name : "David Rayy",
+sclass : "VI",
+rollno : 12 };
+
+function obj1(){
+      
+    document.getElementById("resultheadobj1").innerHTML =`Object Properties: `;    
+    document.getElementById("resultobj1").innerHTML =`${Object.keys(student).toString()}`;    
+
+}
+
+//2. Write a JavaScript program to delete the rollno property from the following object. Also print the object before or after deleting the property.
+
+//Sample object:
+
+
+
+function obj2() 
+{
+     document.getElementById("resultheadobj2").innerHTML =`Before Deleting Properties :  ${Object.keys(student)}`;   
+     
+    delete student.rollno;
+    
+   document.getElementById("resultobj2").innerHTML =`After Deleting Properties : ${Object.keys(student)} `;    
+}
+
+
+
+
+//3. Write a JavaScript program to get the length of a JavaScript object.  
+function obj3() 
+{
+    document.getElementById("resultheadobj3").innerHTML =`Length Of Object :`;   
+        
+     Object.objsize = function(Myobj) 
+    {
+        var osize = 0; 
+        var key;
+        for (key in Myobj) 
+        {
+            if (Myobj.hasOwnProperty(key)) 
+            {
+            osize++;
+            }
+        }
+        return osize;
+    };
+    var objsize = Object.objsize(student);
+    
+    document.getElementById("resultobj3").innerHTML =`${objsize}`;   
+    
+    
+}
+
+//4. Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books.   
+
+var library = 
+[ 
+   {
+       author: 'Bill Gates',
+       title: 'The Road Ahead',
+       readingStatus: true
+   },
+   {
+       author: 'Steve Jobs',
+       title: 'Walter Isaacson',
+       readingStatus: true
+   },
+   {
+       author: 'Suzanne Collins',
+       title:  'Mockingjay: The Final Book of The Hunger Games', 
+       readingStatus: false
+   }
+];
+ function obj4() 
+ {
+    document.getElementById("resultheadobj4").innerHTML = `Result : `;   
+        for (let i = 0; i < library.length; i++) 
+        {
+
+            var book = "Book : " + library[i].title + "'" + ' Author : ' + library[i].author+ ".";
+
+            if (library[i].readingStatus) 
+            {
+                var node = document.createElement("p");               
+                var textnode = document.createTextNode(`Already read ${book}`);        
+                node.appendChild(textnode);                              
+                
+                document.getElementById("resultobj4").appendChild(node); 
+
+                 
+
+              } else
+              {
+                var node = document.createElement("p");               
+                var textnode = document.createTextNode(`You still need to read  ${book}`);        
+                node.appendChild(textnode);                              
+                
+                document.getElementById("resultobj4").appendChild(node); 
+ 
+              }
+            
+            
+        }
+     
+ }
+ //5. Write a JavaScript program to get the volume of a Cylinder with four decimal places using object classes.   
+//Volume of a cylinder : V = πr2h
+//where r is the radius and h is the height of the cylinder.
+
+var Cylinder = {
+    
+    volumeOfCylinder : function (height,radius) 
+{    
+    radius = radius / 2;
+    return (Math.PI*radius*radius*height).toFixed(4);
+    
+}
+ 
+}
+
+function obj5() 
+{
+        var rad = document.getElementById("rad").value;
+        var heg = document.getElementById("heg").value;
+
+       document.getElementById("resultheadobj5").innerHTML = `Result : `;   
+       document.getElementById("resultobj5").innerHTML = `${Cylinder.volumeOfCylinder(heg,rad)}`;  
+
+    
+}
+// function Cylinder(cyl_height, cyl_diameter) {
+//     this.cyl_height = cyl_height;
+//     this.cyl_diameter = cyl_diameter;
+//   }
+  
+//   Cylinder.prototype.Volume = function () {
+//     var radius = this.cyl_diameter / 2;
+//     return this.cyl_height * Math.PI * radius * radius;
+//   };
+//   console.log(Cylinder.prototype.Volume);
+//   var cyl = new Cylinder(7, 4);
+//   // Volume of the cylinder with four decimal places.
+//   console.log('volume =', cyl.Volume().toFixed(4));
