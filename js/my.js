@@ -816,17 +816,63 @@ function obj5()
        document.getElementById("resultobj5").innerHTML = `${Cylinder.volumeOfCylinder(heg,rad)}`;  
 
     
-}
-// function Cylinder(cyl_height, cyl_diameter) {
-//     this.cyl_height = cyl_height;
-//     this.cyl_diameter = cyl_diameter;
-//   }
-  
-//   Cylinder.prototype.Volume = function () {
-//     var radius = this.cyl_diameter / 2;
-//     return this.cyl_height * Math.PI * radius * radius;
-//   };
-//   console.log(Cylinder.prototype.Volume);
-//   var cyl = new Cylinder(7, 4);
-//   // Volume of the cylinder with four decimal places.
-//   console.log('volume =', cyl.Volume().toFixed(4));
+} 
+
+ // Javascript program to find largest among
+// two numbers using ternary operator
+ 
+// Variable declaration
+function con1() {
+    
+
+var n1 = document.getElementById("n1").value;
+var n2 = document.getElementById("n2").value;
+var max;
+//  if (parseInt(n1) > parseInt(n2)) {
+//      max = n1;
+     
+//  }
+//  else {
+//      max = n2;
+//  }
+ 
+ max = (parseInt(n1) > parseInt(n2)) ? parseInt(n1) : parseInt(n2);
+ 
+// Print the largest number
+document.getElementById("resultheadc1").innerHTML = `Result : `;   
+document.getElementById("resultc1").innerHTML = `Largest number between ${n1} and ${n2} is ${max}`;  
+
+ 
+ }
+
+ //Write a js program to find maximum between three numbers using conditional operator.
+
+ function con2() {
+    
+
+    var n1 = document.getElementById("nn1").value;
+    var n2 = document.getElementById("nn2").value;
+    var n3 = document.getElementById("nn3").value;
+
+    var max;
+    //  if (parseInt(n1) > parseInt(n2)&& parseInt(n1)>parseInt(n3)) 
+    //  {
+    //      max = n1;
+         
+    //  }
+    //  else if (parseInt(n2) > parseInt(n1)&& parseInt(n2)>parseInt(n3)) {
+    //      max = n2;
+    //  }
+    //  else {
+    //      max = n3;
+    //  }
+     
+     
+    max = ((parseInt(n1) > parseInt(n2)) && (parseInt(n1)>parseInt(n3))) ? n1 :  ((parseInt(n2) > parseInt(n1)) && (parseInt(n2)>parseInt(n3))) ? n2 : n3;  
+     
+     
+    document.getElementById("resultheadc2").innerHTML = `Result : `;   
+    document.getElementById("resultc2").innerHTML = `Largest number between ${n1} and ${n2} and ${n3} is ${max}`;  
+    
+     
+     }
