@@ -1102,5 +1102,3 @@ function s8() {
     document.getElementById("results8").innerHTML = `${result}`;
 
 }
-//
-//
