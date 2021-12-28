@@ -31,7 +31,7 @@ function example02() {
 function example03() {
 
     var stringPakistan = "I Love Pakistan";
-    var otherString = "I lives in Pakistain";
+    var otherString = "I lives in Pakistan";
 
     document.getElementById("resulthead3").innerHTML = `Concatenate of Strings  "${stringPakistan}" & "${otherString}" is`;
     document.getElementById("result3").innerHTML = ` "${stringPakistan} , ${otherString}"`;
@@ -41,7 +41,7 @@ function example03() {
 function example04() {
 
     var stringPakistan = "I Love Pakistan";
-    var otherString = "I lives in Pakistain";
+    var otherString = "I lives in Pakistan";
     if (stringPakistan === otherString) {
         document.getElementById("resulthead4").innerHTML = `Compare of Strings : "${stringPakistan}" & "${otherString}" is`;
         document.getElementById("result4").innerHTML = true;
@@ -1102,3 +1102,5 @@ function s8() {
     document.getElementById("results8").innerHTML = `${result}`;
 
 }
+//
+//
